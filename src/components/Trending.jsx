@@ -20,7 +20,7 @@ export const Trending = () => {
   }, []);
 
   return (
-    <>
+    <div style={{ padding: '20px' }}>
       <h1>Trending today:</h1>
       <ul>
         {movies.map(movie => (
@@ -29,6 +29,6 @@ export const Trending = () => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };

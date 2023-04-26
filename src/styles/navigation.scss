@@ -1,0 +1,16 @@
+.container {
+  background-color: #c5c5c5;
+  padding: 0;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.navigation-link {
+  text-decoration: none;
+  font-weight: 700;
+}
