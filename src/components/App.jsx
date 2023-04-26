@@ -1,4 +1,5 @@
 import { Navigation } from './Navigation';
+import { Search } from './Search';
 import { Trending } from './Trending';
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
       }}
     >
       <Navigation />
+      <Search />
       <Trending />
     </div>
   );

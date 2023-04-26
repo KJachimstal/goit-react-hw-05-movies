@@ -1,6 +1,7 @@
 @import-normalize;
 /* bring in normalize.css styles */
 @import '/src/styles/navigation.scss';
+@import '/src/styles/search.scss';
 
 body {
   margin: 0;
