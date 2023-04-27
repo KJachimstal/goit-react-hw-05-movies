@@ -1,0 +1,21 @@
+.movie__image {
+  max-width: 300px;
+  max-height: 450px;
+}
+
+.movie__container {
+  padding: 30px;
+}
+
+.movie__general {
+  display: flex;
+}
+
+.movie__info {
+  margin-left: 20px;
+}
+
+.divider {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}

@@ -3,6 +3,7 @@
 @import '/src/styles/navigation.scss';
 @import '/src/styles/search.scss';
 @import '/src/styles/movieList.scss';
+@import '/src/styles//movieDetails.scss';
 
 body {
   margin: 0;

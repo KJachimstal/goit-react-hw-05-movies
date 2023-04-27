@@ -24,18 +24,23 @@ export const MovieDetails = () => {
   if (!movie) return null;
 
   return (
-    <div className="movie_container">
-      <img
-        className="movie__image"
-        src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`}
-        alt="Movie poster"
-      />
-      <h3 className="movie__title">{movie.title}</h3>
-      User Score: {movie.vote_average}%<h5>Overview</h5> {movie.overview}
-      <h5>Genres</h5>
-      {movie.genres.map(genre => (
-        <span key={genre.id}>{genre.name} </span>
-      ))}
+    <div className="movie__container">
+      <div className="movie__general">
+        <img
+          className="movie__image"
+          src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`}
+          alt="Movie poster"
+        />
+        <div className="movie__info">
+          <h3 className="movie__title">{movie.title}</h3>
+          User Score: {movie.vote_average}%<h5>Overview</h5> {movie.overview}
+          <h5>Genres</h5>
+          {movie.genres.map(genre => (
+            <span key={genre.id}>{genre.name} </span>
+          ))}
+        </div>
+      </div>
+      <hr class="divider" />
       <h5>Additional information</h5>
       <ul>
         <li>
@@ -45,6 +50,7 @@ export const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
+      <hr class="divider" />
       <Outlet />
     </div>
   );

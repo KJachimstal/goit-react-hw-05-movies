@@ -27,6 +27,7 @@ const Cast = () => {
       {movieCasts.map(cast => (
         <>
           <img
+            className="cast-photo"
             src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${cast.profile_path}`}
             alt="actor"
           />
