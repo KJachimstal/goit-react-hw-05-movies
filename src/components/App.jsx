@@ -4,27 +4,10 @@ import { Search } from '../pages/Search';
 import { Trending } from '../pages/Trending';
 import { MovieDetails } from '../pages/MovieDetails';
 import { NotFound } from '../pages/NotFound.jsx';
-import { useState } from 'react';
-import api from '../services/api';
 import Cast from './Cast';
 import Reviews from './Reviews';
 
 export const App = () => {
-  const [movies, setMovies] = useState();
-
-  const handleSearch = async event => {
-    event.preventDefault();
-    const searchQuery = event.target.query.value;
-
-    try {
-      const response = await api.fetchMoviesWithQuery(searchQuery);
-      // console.log(response.data);
-      setMovies(response.data.results);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <div
       style={{
@@ -38,10 +21,7 @@ export const App = () => {
       <Navigation />
       <Routes>
         <Route path="/" element={<Trending />} />
-        <Route
-          path="/movies"
-          element={<Search onSearch={handleSearch} movieList={movies} />}
-        />
+        <Route path="/movies" element={<Search />} />
         <Route path="/movies/:movieId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
