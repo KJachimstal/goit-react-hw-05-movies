@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import api from '../services/api';
 import { Link, Outlet } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchMovieById = async movieId => {
@@ -25,6 +26,7 @@ export const MovieDetails = () => {
 
   return (
     <div className="movie__container">
+      <Link to={location.state.from}>Back</Link>
       <div className="movie__general">
         <img
           className="movie__image"
