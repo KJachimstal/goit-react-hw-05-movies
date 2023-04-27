@@ -1,9 +1,9 @@
-import { MoviesList } from 'components/MoviesList';
+import MoviesList from 'components/MoviesList';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import api from '../services/api';
 
-export const Search = props => {
+const Search = props => {
   const [movies, setMovies] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
@@ -54,3 +54,5 @@ export const Search = props => {
     </div>
   );
 };
+
+export default Search;

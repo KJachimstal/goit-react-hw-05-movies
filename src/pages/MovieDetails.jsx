@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import api from '../services/api';
 import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     const fetchMovieById = async movieId => {
@@ -26,7 +28,7 @@ export const MovieDetails = () => {
 
   return (
     <div className="movie__container">
-      <Link to={location.state.from}>Back</Link>
+      <Link to={backLinkHref}>Back</Link>
       <div className="movie__general">
         <img
           className="movie__image"
@@ -53,7 +55,11 @@ export const MovieDetails = () => {
         </li>
       </ul>
       <hr className="divider" />
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
+
+export default MovieDetails;

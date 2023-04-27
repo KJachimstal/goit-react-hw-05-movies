@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import api from '../services/api';
-import { MoviesList } from './MoviesList';
+import MoviesList from './MoviesList';
 
-export const Trending = () => {
+const Trending = () => {
   const [movies, setMovies] = useState([]);
   const [apiError, setApiError] = useState(null);
 
@@ -30,3 +30,5 @@ export const Trending = () => {
     </div>
   );
 };
+
+export default Trending;

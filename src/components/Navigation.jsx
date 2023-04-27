@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Navigation = () => {
+const Navigation = () => {
   const StyledNavLink = styled(NavLink)`
     color: black;
 
@@ -22,3 +22,5 @@ export const Navigation = () => {
     </div>
   );
 };
+
+export default Navigation;
