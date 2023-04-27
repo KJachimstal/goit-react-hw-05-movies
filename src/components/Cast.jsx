@@ -18,7 +18,7 @@ const Cast = () => {
     };
 
     fetchMovieCredits(params.movieId);
-  });
+  }, [params.movieId]);
 
   if (movieCasts.length === 0) return null;
 

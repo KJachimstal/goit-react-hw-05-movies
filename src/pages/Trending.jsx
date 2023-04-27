@@ -11,9 +11,10 @@ export const Trending = () => {
       try {
         const response = await api.fetchTrendingMovies();
         setMovies(response.data.results);
-        console.log(response.data.results);
+        // console.log(response.data.results);
       } catch (error) {
         setApiError(error);
+        console.log(apiError);
       }
     };
 

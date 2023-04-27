@@ -11,8 +11,8 @@ export const MovieDetails = () => {
     const fetchMovieById = async movieId => {
       try {
         const response = await api.fetchMovieById(movieId);
-        console.log(response.data);
         setMovie(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.log(error);
       }
