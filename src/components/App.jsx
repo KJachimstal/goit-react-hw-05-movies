@@ -9,15 +9,7 @@ import Reviews from './Reviews';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <div className="main">
       <Navigation />
       <Routes>
         <Route path="/" element={<Trending />} />

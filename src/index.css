@@ -1,5 +1,6 @@
 @import-normalize;
 /* bring in normalize.css styles */
+@import '/src/styles/app.scss';
 @import '/src/styles/navigation.scss';
 @import '/src/styles/search.scss';
 @import '/src/styles/movieList.scss';
