@@ -19,7 +19,7 @@ export const Trending = () => {
     };
 
     fetchTrendingMovies();
-  }, []);
+  }, [apiError]);
 
   return (
     <div style={{ padding: '20px' }}>

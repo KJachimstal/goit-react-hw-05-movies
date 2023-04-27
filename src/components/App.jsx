@@ -18,7 +18,7 @@ export const App = () => {
 
     try {
       const response = await api.fetchMoviesWithQuery(searchQuery);
-      console.log(response.data);
+      // console.log(response.data);
       setMovies(response.data.results);
     } catch (error) {
       console.log(error);

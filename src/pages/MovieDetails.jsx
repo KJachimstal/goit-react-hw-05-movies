@@ -40,7 +40,7 @@ export const MovieDetails = () => {
           ))}
         </div>
       </div>
-      <hr class="divider" />
+      <hr className="divider" />
       <h5>Additional information</h5>
       <ul>
         <li>
@@ -50,7 +50,7 @@ export const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-      <hr class="divider" />
+      <hr className="divider" />
       <Outlet />
     </div>
   );

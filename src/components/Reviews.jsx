@@ -11,7 +11,7 @@ const Reviews = () => {
       try {
         const response = await api.fetchMovieReviews(id);
         setMovieReviews(response.data.results);
-        console.log(response.data.results);
+        // console.log(response.data.results);
       } catch (error) {
         console.log(error);
       }
@@ -25,7 +25,7 @@ const Reviews = () => {
   return (
     <ul>
       {movieReviews.map(review => (
-        <li>
+        <li key={review.id}>
           <h4>Author: {review.author}</h4>
           <span>{review.content}</span>
         </li>

@@ -24,19 +24,21 @@ const Cast = () => {
 
   return (
     <ul>
-      {movieCasts.map(cast => (
-        <>
-          <li className="cast__item">
+      {movieCasts.map(({ id, profile_path, name, character }) => (
+        <li key={id} className="cast__item">
+          {!!profile_path ? (
             <img
               className="cast__photo"
-              src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${cast.profile_path}`}
+              src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${profile_path}`}
               alt="actor"
             />
-            Name: {cast.name}
-            <br />
-            Character: {cast.character}
-          </li>
-        </>
+          ) : (
+            <div className="cast__photo-placeholder"></div>
+          )}
+          Name: {name}
+          <br />
+          Character: {character}
+        </li>
       ))}
     </ul>
   );
