@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../services/api';
+import { MoviesList } from '../components/MoviesList';
 
 export const Trending = () => {
   const [movies, setMovies] = useState([]);
@@ -23,11 +24,7 @@ export const Trending = () => {
     <div style={{ padding: '20px' }}>
       <h1>Trending today:</h1>
       <ul>
-        {movies.map(movie => (
-          <li>
-            <a href="#">{movie.title}</a>
-          </li>
-        ))}
+        <MoviesList moviesList={movies} />
       </ul>
     </div>
   );
