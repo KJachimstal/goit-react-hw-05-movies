@@ -18,7 +18,7 @@ const Reviews = () => {
     };
 
     fetchMovieReviews(params.movieId);
-  }, []);
+  });
 
   if (movieReviews.length === 0) return <h6>There is no reviews.</h6>;
 
